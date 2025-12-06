@@ -2,7 +2,7 @@ This project implements a fully functional Neural Network Accelerator designed a
 
 Unlike standard GPU implementations, this design uses no vendor-specific IP cores, making it portable across FPGA platforms. The hardware is verified using a Hardware-Software Co-Design approach, where a Python "Golden Model" (running in Google Colab) drives the RTL simulation via the Cocotb framework to ensure 100% bit-true accuracy.
 
- Key Features
+🚀 Key Features
 
 No Vendor IP: Pure RTL implementation of Matrix Multiplication.
 
@@ -14,7 +14,7 @@ Python Verification: Automated testbench using cocotb that compares RTL outputs 
 
 Google Colab Ready: The simulation environment is configured to run entirely in the cloud using open-source tools.
 
-Repository Structure
+📂 Repository Structure
 
 ├── accelerator_design.sv   # The Verilog RTL (Top Module + Serial PE)
 ├── test_accelerator.py     # The Python Testbench (Cocotb + Golden Model)
@@ -23,7 +23,7 @@ Repository Structure
 └── README.md               # Project Documentation
 
 
- System Architecture
+🛠️ System Architecture
 
 The accelerator consists of a Serial Multiply-Accumulate (MAC) unit.
 
@@ -41,7 +41,7 @@ Hidden Layer 1: 16 Neurons (ReLU applied in Software)
 
 Output Layer: 4 Neurons
 
- How to Run on Google Colab
+💻 How to Run on Google Colab
 
 You can simulate this hardware design without installing any software on your local machine.
 
@@ -69,4 +69,17 @@ Step 4: View Results
 
 The console will output the simulation logs. Look for:
 
-TEST PASSED == HARDWARE ACCURACY: 100.00%
+TEST PASSED > HARDWARE ACCURACY: 100.00%
+
+To view waveforms, download the generated .vcd file and open it in GTKWave.
+
+📊 Results
+
+The verification suite runs random vectors through the 8-16-4 network.
+
+Total Neurons Simulated: 20
+
+Bit-True Matches: 20/20
+
+Accuracy: 100%
+
